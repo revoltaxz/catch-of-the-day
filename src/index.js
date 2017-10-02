@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import {
     BrowserRouter as Router,
     Route,
-    Link,
     Switch,
     Redirect
   } from 'react-router-dom'
@@ -18,6 +17,7 @@ const Root = () => {
         <Router>
          <Switch>
             <Route path="/" exact component={StorePicker}/>
+            <Redirect from="*" to="/"/>
             <Route pattern="/store/:storeId" component={App}/>
          </Switch>
         </Router>
